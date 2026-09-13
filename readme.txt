@@ -36,10 +36,10 @@ para pantallas pequeñas
 
 *pequeños comentarios
 para las carpetas no supe como ponerles mensajes de commit asi que quedaron con el mensaje del archivo
-que se subio al github
+que se subio al github (Yan)
 
 si hay algun espacio que sobra sobre las lineas de texto, eso es porque se me olvido ponerles comentarios 
-en el commit y tuve que comentarlos uno por uno 
+en el commit y tuve que comentarlos uno por uno (Yan)
 
 
 
