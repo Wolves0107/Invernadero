@@ -1,4 +1,3 @@
-// datos de prueba usuario actual
 const misCultivos = [
     { nombre: "Tomate", tipo: "Alimentario", fecha: "2026-03-01", estacional: true },
     { nombre: "Rosa", tipo: "Flor", fecha: "2026-04-15", estacional: false },
@@ -11,7 +10,6 @@ const misSensores = [
     { nombre: "Sensor Riego 1", descripcion: "Volumen de agua", unidad: "m³" }
 ];
 
-// datos de prueba global
 const usuarios = [
     {
         nombre: "Juan Pérez",
@@ -43,7 +41,6 @@ const usuarios = [
     }
 ];
 
-// confirmacion antes de eliminar
 function confirmarEliminacion(nombreUsuario) {
     return confirm("¿Eliminar a " + nombreUsuario + " y todos sus registros?");
 }
