@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invernadero - Agregar</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
@@ -16,50 +19,38 @@
 
     <form>
 
-        <label for="tipoEntidad">¿Qué quieres agregar?</label>
-        <select id="tipoEntidad" onchange="mostrarFormulario()">
-            <option value="cultivo">Cultivo</option>
-            <option value="sensor">Sensor</option>
-        </select>
+        <h2>Agregar Cultivo</h2>
+        <label for="nombreCultivo">Nombre:</label>
+        <input type="text" id="nombreCultivo" required>
 
-        <div id="formCultivo">
-            <h2>Datos del cultivo</h2>
-            <label for="nombreCultivo">Nombre:</label>
-            <input type="text" id="nombreCultivo">
+        <label for="tipoCultivo">Tipo:</label>
+        <input type="text" id="tipoCultivo" required>
 
-            <label for="tipoCultivo">Tipo:</label>
-            <input type="text" id="tipoCultivo">
+        <label for="fechaCultivo">Fecha de cultivo:</label>
+        <input type="date" id="fechaCultivo" required>
 
-            <label for="fechaCultivo">Fecha de cultivo:</label>
-            <input type="date" id="fechaCultivo">
+        <label for="estacional">¿Es estacional?</label>
+        <input type="checkbox" id="estacional">
 
-            <label for="estacional">¿Es estacional?</label>
-            <input type="checkbox" id="estacional">
-        </div>
-
-        <div id="formSensor" style="display: none;">
-            <h2>Datos del sensor</h2>
-            <label for="nombreSensor">Nombre:</label>
-            <input type="text" id="nombreSensor">
-
-            <label for="descripcionSensor">Descripción:</label>
-            <input type="text" id="descripcionSensor">
-
-            <label for="unidadSensor">Unidad:</label>
-            <input type="text" id="unidadSensor">
-        </div>
-
-        <button type="submit">Guardar</button>
+        <button type="submit">Guardar Cultivo</button>
 
     </form>
 
-    <script>
-        function mostrarFormulario() {
-            const tipo = document.getElementById("tipoEntidad").value;
-            document.getElementById("formCultivo").style.display = (tipo === "cultivo") ? "block" : "none";
-            document.getElementById("formSensor").style.display = (tipo === "sensor") ? "block" : "none";
-        }
-    </script>
+    <form>
+
+        <h2>Agregar Sensor</h2>
+        <label for="nombreSensor">Nombre:</label>
+        <input type="text" id="nombreSensor" required>
+
+        <label for="descripcionSensor">Descripción:</label>
+        <input type="text" id="descripcionSensor" required>
+
+        <label for="unidadSensor">Unidad:</label>
+        <input type="text" id="unidadSensor" required>
+
+        <button type="submit">Guardar Sensor</button>
+
+    </form>
 
 </body>
 </html>

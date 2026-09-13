@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invernadero - Datos</title>
-
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
@@ -17,52 +18,34 @@
     </nav>
 
     <label for="selectorSensor">Selecciona un sensor:</label>
-    <select id="selectorSensor" onchange="mostrarGrafico()">
+    <select id="selectorSensor">
         <option value="temperatura">Sensor Temperatura 1</option>
         <option value="humedad">Sensor Humedad 1</option>
         <option value="riego">Sensor Riego 1</option>
     </select>
 
-    <canvas id="graficoSensor" width="400" height="200"></canvas>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-    <script>
-
-        const datosSensores = {
-            temperatura: [18, 20, 22, 21, 23, 24, 22],
-            humedad: [60, 62, 58, 65, 63, 61, 64],
-            riego: [5, 6, 4, 7, 5, 6, 5]
-        };
-
-        const etiquetas = ["Día 1", "Día 2", "Día 3", "Día 4", "Día 5", "Día 6", "Día 7"];
-
-        let grafico;
-
-        function mostrarGrafico() {
-            const sensorSeleccionado = document.getElementById("selectorSensor").value;
-            const datos = datosSensores[sensorSeleccionado];
-
-            if (grafico) {
-                grafico.destroy();
-            }
-
-            const ctx = document.getElementById("graficoSensor");
-            grafico = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: etiquetas,
-                    datasets: [{
-                        label: "Valor captado",
-                        data: datos,
-                        borderColor: "green",
-                        fill: false
-                    }]
-                }
-            });
-        }
-
-        mostrarGrafico();
-    </script>
+    <table border="1">
+        <tr>
+            <th>Fecha</th>
+            <th>Valor captado</th>
+        </tr>
+        <tr>
+            <td>01/09/2026</td>
+            <td>18°C</td>
+        </tr>
+        <tr>
+            <td>02/09/2026</td>
+            <td>20°C</td>
+        </tr>
+        <tr>
+            <td>03/09/2026</td>
+            <td>22°C</td>
+        </tr>
+        <tr>
+            <td>04/09/2026</td>
+            <td>21°C</td>
+        </tr>
+    </table>
 
 </body>
 </html>
