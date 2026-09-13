@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>Invernadero - Agregar</title>
+</head>
+<body>
+
+    <h1>Agregar</h1>
+
+    <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="invernadero.html">Invernadero</a>
+        <a href="creacion.html">Agregar</a>
+        <a href="datos.html">Datos</a>
+        <a href="../index.html">Cerrar sesión</a>
+    </nav>
+
+    <form>
+
+        <label for="tipoEntidad">¿Qué quieres agregar?</label>
+        <select id="tipoEntidad" onchange="mostrarFormulario()">
+            <option value="cultivo">Cultivo</option>
+            <option value="sensor">Sensor</option>
+        </select>
+
+        <div id="formCultivo">
+            <h2>Datos del cultivo</h2>
+            <label for="nombreCultivo">Nombre:</label>
+            <input type="text" id="nombreCultivo">
+
+            <label for="tipoCultivo">Tipo:</label>
+            <input type="text" id="tipoCultivo">
+
+            <label for="fechaCultivo">Fecha de cultivo:</label>
+            <input type="date" id="fechaCultivo">
+
+            <label for="estacional">¿Es estacional?</label>
+            <input type="checkbox" id="estacional">
+        </div>
+
+        <div id="formSensor" style="display: none;">
+            <h2>Datos del sensor</h2>
+            <label for="nombreSensor">Nombre:</label>
+            <input type="text" id="nombreSensor">
+
+            <label for="descripcionSensor">Descripción:</label>
+            <input type="text" id="descripcionSensor">
+
+            <label for="unidadSensor">Unidad:</label>
+            <input type="text" id="unidadSensor">
+        </div>
+
+        <button type="submit">Guardar</button>
+
+    </form>
+
+    <script>
+        function mostrarFormulario() {
+            const tipo = document.getElementById("tipoEntidad").value;
+            document.getElementById("formCultivo").style.display = (tipo === "cultivo") ? "block" : "none";
+            document.getElementById("formSensor").style.display = (tipo === "sensor") ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>
